@@ -28,37 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            this.CloseButton = new System.Windows.Forms.Button();
+            this.MinimizeButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.LogButtton = new System.Windows.Forms.Label();
             this.MonitorPanel = new System.Windows.Forms.Panel();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
-            // button1
+            // CloseButton
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(780, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(20, 20);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CloseButton.FlatAppearance.BorderSize = 0;
+            this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseButton.Location = new System.Drawing.Point(780, 0);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(20, 20);
+            this.CloseButton.TabIndex = 3;
+            this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            this.CloseButton.Paint += new System.Windows.Forms.PaintEventHandler(this.CloseButton_Paint);
             // 
-            // button2
+            // MinimizeButton
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(760, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(20, 20);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "M";
-            this.button2.UseVisualStyleBackColor = true;
+            this.MinimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MinimizeButton.FlatAppearance.BorderSize = 0;
+            this.MinimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MinimizeButton.Location = new System.Drawing.Point(760, 0);
+            this.MinimizeButton.Name = "MinimizeButton";
+            this.MinimizeButton.Size = new System.Drawing.Size(20, 20);
+            this.MinimizeButton.TabIndex = 1;
+            this.MinimizeButton.UseVisualStyleBackColor = true;
+            this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
+            this.MinimizeButton.Paint += new System.Windows.Forms.PaintEventHandler(this.MinimizeButton_Paint);
             // 
             // label1
             // 
@@ -74,14 +77,14 @@
             // 
             this.LogButtton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LogButtton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogButtton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LogButtton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LogButtton.Location = new System.Drawing.Point(350, 0);
             this.LogButtton.Name = "LogButtton";
             this.LogButtton.Size = new System.Drawing.Size(100, 20);
             this.LogButtton.TabIndex = 3;
             this.LogButtton.Text = "СОБЫТИЯ";
             this.LogButtton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.LogButtton.Click += new System.EventHandler(this.label2_Click);
+            this.LogButtton.Click += new System.EventHandler(this.LogButton_Click);
             // 
             // MonitorPanel
             // 
@@ -94,16 +97,21 @@
             this.MonitorPanel.Size = new System.Drawing.Size(800, 580);
             this.MonitorPanel.TabIndex = 4;
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.DoubleClick += new System.EventHandler(this.TrayIcon_DoubleClick);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.MonitorPanel);
             this.Controls.Add(this.LogButtton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.MinimizeButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -114,11 +122,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button CloseButton;
+        private System.Windows.Forms.Button MinimizeButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label LogButtton;
         private System.Windows.Forms.Panel MonitorPanel;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 
