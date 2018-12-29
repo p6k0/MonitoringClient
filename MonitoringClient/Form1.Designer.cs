@@ -65,20 +65,20 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Location = new System.Drawing.Point(250, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(300, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Имя станции [ЭКСПРЕСС-3 код]";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LogButtton
             // 
-            this.LogButtton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LogButtton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LogButtton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LogButtton.Location = new System.Drawing.Point(350, 0);
+            this.LogButtton.Location = new System.Drawing.Point(0, 0);
             this.LogButtton.Name = "LogButtton";
             this.LogButtton.Size = new System.Drawing.Size(100, 20);
             this.LogButtton.TabIndex = 3;

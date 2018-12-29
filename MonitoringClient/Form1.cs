@@ -21,11 +21,10 @@ namespace MonitoringClient
             using (GraphicsPath gp = new GraphicsPath())
             {
                 int HalfH = LogButtton.Height / 2;
-                Rectangle arc = new Rectangle(0, 0, HalfH, HalfH);
-                gp.AddArc(arc, 180, 90);
-                arc.X = LogButtton.Width - arc.Width - 1;
+                Rectangle arc = new Rectangle(LogButtton.Width - HalfH - 1, 0, HalfH, HalfH);
                 gp.AddArc(arc, 270, 90);
                 gp.AddLine(LogButtton.Width, LogButtton.Height, 0, LogButtton.Height);
+                gp.AddLine(0, LogButtton.Height, 0, 0);
                 LogButtton.Region = new Region(gp);
             }
             TrayIcon_SetState();
@@ -50,7 +49,7 @@ namespace MonitoringClient
                 Left = 5,
                 Top = 5,
                 BorderStyle = BorderStyle.None,
-                BackColor = LogPanel.BackColor,
+                BackColor = Color.FromArgb(0x78,0x90,0x9c),
                 Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right,
                 Font = new Font("Consolas", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 204)
             };
