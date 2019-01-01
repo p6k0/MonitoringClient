@@ -35,6 +35,9 @@
             this.LogButtton = new System.Windows.Forms.Label();
             this.MonitorPanel = new System.Windows.Forms.Panel();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.LogPanel = new System.Windows.Forms.Panel();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.LogPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // CloseButton
@@ -46,6 +49,7 @@
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(20, 20);
             this.CloseButton.TabIndex = 3;
+            this.CloseButton.TabStop = false;
             this.CloseButton.UseVisualStyleBackColor = true;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             this.CloseButton.Paint += new System.Windows.Forms.PaintEventHandler(this.CloseButton_Paint);
@@ -59,6 +63,7 @@
             this.MinimizeButton.Name = "MinimizeButton";
             this.MinimizeButton.Size = new System.Drawing.Size(20, 20);
             this.MinimizeButton.TabIndex = 1;
+            this.MinimizeButton.TabStop = false;
             this.MinimizeButton.UseVisualStyleBackColor = true;
             this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
             this.MinimizeButton.Paint += new System.Windows.Forms.PaintEventHandler(this.MinimizeButton_Paint);
@@ -94,7 +99,7 @@
             this.MonitorPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.MonitorPanel.Location = new System.Drawing.Point(0, 20);
             this.MonitorPanel.Name = "MonitorPanel";
-            this.MonitorPanel.Size = new System.Drawing.Size(800, 580);
+            this.MonitorPanel.Size = new System.Drawing.Size(800, 290);
             this.MonitorPanel.TabIndex = 4;
             // 
             // notifyIcon1
@@ -102,11 +107,33 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.DoubleClick += new System.EventHandler(this.TrayIcon_DoubleClick);
             // 
+            // LogPanel
+            // 
+            this.LogPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LogPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.LogPanel.Controls.Add(this.richTextBox1);
+            this.LogPanel.Location = new System.Drawing.Point(0, 310);
+            this.LogPanel.Name = "LogPanel";
+            this.LogPanel.Size = new System.Drawing.Size(800, 290);
+            this.LogPanel.TabIndex = 5;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Location = new System.Drawing.Point(5, 25);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(790, 260);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.LogPanel);
             this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.MonitorPanel);
             this.Controls.Add(this.LogButtton);
@@ -116,6 +143,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Клиент";
+            this.LogPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -128,6 +156,8 @@
         private System.Windows.Forms.Label LogButtton;
         private System.Windows.Forms.Panel MonitorPanel;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.Panel LogPanel;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 

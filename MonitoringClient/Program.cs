@@ -19,7 +19,7 @@ namespace MonitoringClient
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FormCaptcha());
             logger.Info("Завершение приложения");
         }
     }
