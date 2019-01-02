@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimpleLogger;
+using System;
 using System.Windows.Forms;
 
 namespace MonitoringClient
@@ -9,10 +10,10 @@ namespace MonitoringClient
         #endregion
         public Form1()
         {
-            Program.logger.Info("Отрисовка пользовательского интерфейса");
+            SimpleLog.Info("Отрисовка пользовательского интерфейса");
             InitializeComponent();
-            this.BackColor = FormHelper.GetColor(FormHelper.SkinColors.Primary);
-            this.ForeColor = FormHelper.GetColor(FormHelper.SkinColors.PrimaryText);
+            BackColor = FormHelper.GetColor(FormHelper.SkinColors.Primary);
+            ForeColor = FormHelper.GetColor(FormHelper.SkinColors.PrimaryText);
             //Задаем ширину во всю клиентскую область
             Bounds = Screen.PrimaryScreen.WorkingArea;
             TrayIcon_SetState();
@@ -50,7 +51,22 @@ namespace MonitoringClient
         #region кнопка закрыть
         private void CloseButton_Click(object sender, EventArgs e)
         {
-            Close();
+            SimpleLog.Warning("Пользователем инициирован выход из программы");
+            using (FormCaptcha f =
+#if DEBUG
+                new FormCaptcha(3, 10)
+#else
+                new FormCaptcha(7, 10)
+#endif
+                )
+            {
+                if (f.ShowDialog() == DialogResult.OK)
+                {
+                    SimpleLog.Info("Пользователем подтвержден выход из программы");
+                    Close();
+                }
+            }
+
         }
 
         private void CloseButton_Paint(object sender, PaintEventArgs e)

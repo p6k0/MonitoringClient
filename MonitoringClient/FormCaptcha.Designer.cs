@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.TitleLabel = new System.Windows.Forms.Label();
             this.CloseButton = new System.Windows.Forms.Button();
             this.OriginalText = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.TimerLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // TitleLabel
@@ -76,7 +79,7 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.textBox1.Font = new System.Drawing.Font("Consolas", 26F);
-            this.textBox1.Location = new System.Drawing.Point(2, 80);
+            this.textBox1.Location = new System.Drawing.Point(2, 85);
             this.textBox1.MaxLength = 64;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(396, 41);
@@ -95,10 +98,26 @@
             this.label2.Text = "Для подтверждения действия введите символы, указанные выше:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // TimerLabel
+            // 
+            this.TimerLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TimerLabel.Location = new System.Drawing.Point(4, 80);
+            this.TimerLabel.Name = "TimerLabel";
+            this.TimerLabel.Size = new System.Drawing.Size(396, 2);
+            this.TimerLabel.TabIndex = 8;
+            // 
             // FormCaptcha
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(400, 125);
+            this.ClientSize = new System.Drawing.Size(400, 132);
+            this.Controls.Add(this.TimerLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.OriginalText);
@@ -121,5 +140,7 @@
         private System.Windows.Forms.Label OriginalText;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label TimerLabel;
     }
 }
