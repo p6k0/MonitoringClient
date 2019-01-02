@@ -1,21 +1,27 @@
-﻿using SimpleLogger;
+﻿
 using System;
 using System.Windows.Forms;
 
 namespace MonitoringClient
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         #region панель лога
         #endregion
-        public Form1()
+        public MainForm(bool WithTaskbar = false)
         {
-            SimpleLog.Info("Отрисовка пользовательского интерфейса");
             InitializeComponent();
+            //Задаем ширину во всю клиентскую область
+
+            Bounds = WithTaskbar ? Screen.PrimaryScreen.WorkingArea : Screen.PrimaryScreen.Bounds;
             BackColor = FormHelper.GetColor(FormHelper.SkinColors.Primary);
             ForeColor = FormHelper.GetColor(FormHelper.SkinColors.PrimaryText);
-            //Задаем ширину во всю клиентскую область
-            Bounds = Screen.PrimaryScreen.WorkingArea;
+            LogPanel.BackColor = FormHelper.GetColor(FormHelper.SkinColors.Secondary);
+            LogPanel.Top = 20;
+            MonitorPanel.Top = 20;
+            richTextBox1.BackColor = FormHelper.GetColor(FormHelper.SkinColors.Secondary2);
+            LogPanel.Height = Height - 20;
+            MonitorPanel.Height = LogPanel.Height;
             TrayIcon_SetState();
 
         }
@@ -51,18 +57,16 @@ namespace MonitoringClient
         #region кнопка закрыть
         private void CloseButton_Click(object sender, EventArgs e)
         {
-            SimpleLog.Warning("Пользователем инициирован выход из программы");
             using (FormCaptcha f =
-#if DEBUG
+                #if DEBUG
                 new FormCaptcha(3, 10)
-#else
+                #else
                 new FormCaptcha(7, 10)
-#endif
+                #endif
                 )
             {
                 if (f.ShowDialog() == DialogResult.OK)
                 {
-                    SimpleLog.Info("Пользователем подтвержден выход из программы");
                     Close();
                 }
             }

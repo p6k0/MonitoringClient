@@ -1,6 +1,6 @@
 ﻿namespace MonitoringClient
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -64,6 +64,7 @@
             this.MinimizeButton.Size = new System.Drawing.Size(20, 20);
             this.MinimizeButton.TabIndex = 1;
             this.MinimizeButton.TabStop = false;
+            this.MinimizeButton.UseMnemonic = false;
             this.MinimizeButton.UseVisualStyleBackColor = true;
             this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
             this.MinimizeButton.Paint += new System.Windows.Forms.PaintEventHandler(this.MinimizeButton_Paint);
@@ -71,12 +72,12 @@
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(250, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(300, 20);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Имя станции [ЭКСПРЕСС-3 код]";
+            this.label1.Text = "ПУШКИНО [2000035]";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LogButtton
@@ -118,9 +119,13 @@
             this.LogPanel.Name = "LogPanel";
             this.LogPanel.Size = new System.Drawing.Size(800, 290);
             this.LogPanel.TabIndex = 5;
+            this.LogPanel.Visible = false;
             // 
             // richTextBox1
             // 
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Location = new System.Drawing.Point(5, 25);
             this.richTextBox1.Name = "richTextBox1";

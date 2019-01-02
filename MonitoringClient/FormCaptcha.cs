@@ -1,4 +1,4 @@
-﻿using SimpleLogger;
+﻿
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
@@ -27,8 +27,7 @@ namespace MonitoringClient
 
         public FormCaptcha(int Length = 3, byte TimeToClose = 10)
         {
-            SimpleLog.Debug("Запущен модуль подтверждения выполнения действия ("+Length+" символов, таймаут "+TimeToClose+" сек.)");
-            this.TimeToClose = TimeToClose*1000;
+            this.TimeToClose = TimeToClose * 1000;
             Timeout = this.TimeToClose;
             Application.AddMessageFilter(this);
             InitializeComponent();
@@ -61,7 +60,6 @@ namespace MonitoringClient
 
         private void CloseButton_Click(object sender, System.EventArgs e)
         {
-            SimpleLog.Info("Пользователь отказался от подтверждения действия");
             Close();
         }
 
@@ -76,7 +74,6 @@ namespace MonitoringClient
             //Если текст равен, то пропускаем
             else if (textBox1.Text == OriginalText.Text)
             {
-                SimpleLog.Debug("Пользователь подтвердил свои действия");
                 SetBorderColor(FormHelper.SkinColors.Info);
                 Update();
                 DialogResult = DialogResult.OK;
@@ -119,10 +116,7 @@ namespace MonitoringClient
         {
             TimeToClose -= 500;
             if (TimeToClose <= 0)
-            {
-                SimpleLog.Debug("Время ввода подтверждения истекло");
                 Close();
-            }
 
             float proc = textBox1.Width * ((float)TimeToClose / Timeout);
 

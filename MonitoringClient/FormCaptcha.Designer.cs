@@ -40,11 +40,11 @@
             // 
             // TitleLabel
             // 
-            this.TitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
             this.TitleLabel.Location = new System.Drawing.Point(0, 0);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.TitleLabel.Size = new System.Drawing.Size(380, 20);
+            this.TitleLabel.Size = new System.Drawing.Size(450, 20);
             this.TitleLabel.TabIndex = 0;
             this.TitleLabel.Text = "pP";
             this.TitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -54,7 +54,7 @@
             this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CloseButton.FlatAppearance.BorderSize = 0;
             this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CloseButton.Location = new System.Drawing.Point(380, 0);
+            this.CloseButton.Location = new System.Drawing.Point(450, 0);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(20, 20);
             this.CloseButton.TabIndex = 4;
@@ -67,22 +67,24 @@
             // 
             this.OriginalText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.OriginalText.Font = new System.Drawing.Font("Consolas", 27F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OriginalText.Font = new System.Drawing.Font("Consolas", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.OriginalText.Location = new System.Drawing.Point(2, 20);
             this.OriginalText.Name = "OriginalText";
-            this.OriginalText.Size = new System.Drawing.Size(396, 40);
+            this.OriginalText.Size = new System.Drawing.Size(466, 40);
             this.OriginalText.TabIndex = 5;
             this.OriginalText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox1
             // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.textBox1.Font = new System.Drawing.Font("Consolas", 26F);
+            this.textBox1.Font = new System.Drawing.Font("Consolas", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.textBox1.Location = new System.Drawing.Point(2, 85);
             this.textBox1.MaxLength = 64;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(396, 41);
+            this.textBox1.Size = new System.Drawing.Size(466, 41);
             this.textBox1.TabIndex = 6;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -91,9 +93,10 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(2, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(396, 20);
+            this.label2.Size = new System.Drawing.Size(466, 20);
             this.label2.TabIndex = 7;
             this.label2.Text = "Для подтверждения действия введите символы, указанные выше:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -110,13 +113,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TimerLabel.Location = new System.Drawing.Point(4, 80);
             this.TimerLabel.Name = "TimerLabel";
-            this.TimerLabel.Size = new System.Drawing.Size(396, 2);
+            this.TimerLabel.Size = new System.Drawing.Size(466, 2);
             this.TimerLabel.TabIndex = 8;
             // 
             // FormCaptcha
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(400, 132);
+            this.ClientSize = new System.Drawing.Size(470, 132);
             this.Controls.Add(this.TimerLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
