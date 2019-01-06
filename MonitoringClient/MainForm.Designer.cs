@@ -37,6 +37,8 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.LogPanel = new System.Windows.Forms.Panel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.station1 = new TurnCtrl.Station();
+            this.MonitorPanel.SuspendLayout();
             this.LogPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,6 +100,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MonitorPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.MonitorPanel.Controls.Add(this.station1);
             this.MonitorPanel.Location = new System.Drawing.Point(0, 20);
             this.MonitorPanel.Name = "MonitorPanel";
             this.MonitorPanel.Size = new System.Drawing.Size(800, 290);
@@ -133,7 +136,19 @@
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
-            // Form1
+            // station1
+            // 
+            this.station1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.station1.AutoScroll = true;
+            this.station1.Location = new System.Drawing.Point(0, 0);
+            this.station1.Margin = new System.Windows.Forms.Padding(0);
+            this.station1.Name = "station1";
+            this.station1.Size = new System.Drawing.Size(800, 290);
+            this.station1.TabIndex = 0;
+            // 
+            // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
@@ -145,9 +160,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.MinimizeButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Клиент";
+            this.MonitorPanel.ResumeLayout(false);
             this.LogPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -163,6 +179,7 @@
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Panel LogPanel;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private TurnCtrl.Station station1;
     }
 }
 

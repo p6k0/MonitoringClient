@@ -1,6 +1,8 @@
 ﻿
 using System;
+using System.IO;
 using System.Windows.Forms;
+using TurnCtrl;
 
 namespace MonitoringClient
 {
@@ -8,10 +10,13 @@ namespace MonitoringClient
     {
         #region панель лога
         #endregion
-        public MainForm(bool WithTaskbar = false)
+        public MainForm(bool WithTaskbar = true)
         {
+            AsokupeConfig cfg = new AsokupeConfig(Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + @"\Config\map.atcfg");
+
             InitializeComponent();
             //Задаем ширину во всю клиентскую область
+
 
             Bounds = WithTaskbar ? Screen.PrimaryScreen.WorkingArea : Screen.PrimaryScreen.Bounds;
             BackColor = FormHelper.GetColor(FormHelper.SkinColors.Primary);
@@ -24,6 +29,7 @@ namespace MonitoringClient
             MonitorPanel.Height = LogPanel.Height;
             TrayIcon_SetState();
 
+            cfg.DrawMap(station1);
         }
         #region трей
         /// <summary>
@@ -52,7 +58,6 @@ namespace MonitoringClient
             else
                 LogButtton.BackColor = LogPanel.BackColor;
             LogPanel.Visible = !LogPanel.Visible;
-            MonitorPanel.Visible = !MonitorPanel.Visible;
         }
         #region кнопка закрыть
         private void CloseButton_Click(object sender, EventArgs e)

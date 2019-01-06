@@ -95,5 +95,11 @@
   <ItemGroup>
     <None Include="Resources\Tray_Problem.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\TurnCtrl\TurnCtrl.csproj">
+      <Project>{b26ecb75-6fb0-4d6a-9c79-a578b8b79559}</Project>
+      <Name>TurnCtrl</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
